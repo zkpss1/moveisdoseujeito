@@ -37,9 +37,9 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FCFAF7]/95 backdrop-blur-md border-b border-[#DED7D0] transition-all">
+    <header className="relative z-40 bg-[#FCFAF7] border-b border-[#DED7D0]">
       <div className="max-w-[1360px] mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-[72px] sm:h-20">
           
           {/* Zone 1: Logo Oficial Móveis do Seu Jeito (Tamanho responsivo para telefone e desktop) */}
           <button 
@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({
             <img
               src={IMAGES.logo}
               alt="Móveis do Seu Jeito"
-              className="w-32 h-[60px] min-[360px]:w-40 min-[360px]:h-[72px] sm:w-44 sm:h-[78px] lg:w-36 lg:h-[66px] xl:w-44 xl:h-[78px] object-cover object-[center_72%] transition-transform group-hover:scale-105"
+              className="w-28 h-[54px] min-[360px]:w-[136px] min-[360px]:h-16 sm:w-40 sm:h-[72px] lg:w-32 lg:h-[60px] xl:w-40 xl:h-[72px] object-cover object-[center_72%] transition-transform group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </button>
