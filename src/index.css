@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  /* Cores observadas no guia de design e print da marca */
+  --color-espresso: #24150e;
+  --color-espresso-hover: #39271d;
+  --color-espresso-active: #170d08;
+  --color-wood: #c8a484;
+  --color-sand: #e6ddd6;
+  --color-page: #f8f5f0;
+  --color-surface: #fcfaf7;
+  --color-text: #24150e;
+  --color-text-secondary: #665b52;
+  --color-text-muted: #8a817a;
+  --color-border: #ded7d0;
+  --color-focus: #875d41;
+  --color-error: #9b4039;
+  --color-success: #47664f;
+
+  /* Raios e sombras discretos */
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --radius-panel: 8px;
+  --shadow-card: 0 2px 10px rgb(36 21 14 / 6%);
+  --shadow-modal: 0 16px 48px rgb(36 21 14 / 20%);
+
+  /* Tipografia */
+  --font-sans: "Montserrat", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-page);
+  color: var(--color-text);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Custom smooth scroll and transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus outline acessível conforme item 7 do guia */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

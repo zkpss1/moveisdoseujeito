@@ -1,0 +1,6 @@
+{
+  "name": "Móveis do Seu Jeito",
+  "description": "Marcenaria sob medida e móveis planejados de alto padrão em Araruama e Região dos Lagos. Ambientes residenciais e comerciais personalizados com design exclusivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
