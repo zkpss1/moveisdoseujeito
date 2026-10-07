@@ -1,5 +1,13 @@
 import { CategoryItem, ProjectItem, BenefitItem, TestimonialItem } from '../types';
 
+// Importação das imagens como módulos ES para garantir empacotamento completo pelo Vite no Deploy (Vercel, Netlify, GitHub Pages)
+import logoImg from '../assets/images/logo_official.png';
+import heroQuartoImg from '../assets/images/hero_quarto_ripado.jpg';
+import heroCozinhaImg from '../assets/images/hero_cozinha_fendi.jpg';
+import heroGuardaRoupaImg from '../assets/images/hero_guarda_roupa.jpg';
+import heroGourmetImg from '../assets/images/hero_gourmet.jpg';
+import carouselBanheiroImg from '../assets/images/carousel_banheiro_madeira_led_1791386830507.jpg';
+
 export const COMPANY_INFO = {
   name: 'Móveis do Seu Jeito',
   tagline: 'Marcenaria de Alto Padrão & Móveis Planejados',
@@ -17,17 +25,17 @@ export const COMPANY_INFO = {
 
 // Imagens dos projetos reais do cliente e a logo oficial em 3D
 export const IMAGES = {
-  logo: '/src/assets/images/logo_official.png',
-  carouselQuartoRipado: '/src/assets/images/hero_quarto_ripado.jpg',
-  carouselCozinha: '/src/assets/images/hero_cozinha_fendi.jpg',
-  carouselGuardaRoupa: '/src/assets/images/hero_guarda_roupa.jpg',
-  carouselGourmet: '/src/assets/images/hero_gourmet.jpg',
-  hero: '/src/assets/images/hero_cozinha_fendi.jpg',
-  kitchen: '/src/assets/images/hero_cozinha_fendi.jpg',
-  bedroom: '/src/assets/images/hero_guarda_roupa.jpg',
-  bathroom: '/src/assets/images/carousel_banheiro_madeira_led_1791386830507.jpg',
-  gourmet: '/src/assets/images/hero_gourmet.jpg',
-  living: '/src/assets/images/hero_quarto_ripado.jpg',
+  logo: logoImg,
+  carouselQuartoRipado: heroQuartoImg,
+  carouselCozinha: heroCozinhaImg,
+  carouselGuardaRoupa: heroGuardaRoupaImg,
+  carouselGourmet: heroGourmetImg,
+  hero: heroCozinhaImg,
+  kitchen: heroCozinhaImg,
+  bedroom: heroGuardaRoupaImg,
+  bathroom: carouselBanheiroImg,
+  gourmet: heroGourmetImg,
+  living: heroQuartoRipado,
 };
 
 export const CATEGORIES: CategoryItem[] = [
