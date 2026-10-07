@@ -62,9 +62,9 @@ Gostaria de agendar uma visita para medição ou receber contato da equipe!`;
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-black/60 backdrop-blur-xs flex items-start justify-center p-4 sm:p-6 animate-fade-in">
       <div 
-        className="relative bg-[#FCFAF7] border border-[#DED7D0] rounded-[8px] max-w-xl w-full p-6 sm:p-8 shadow-2xl my-8"
+        className="relative bg-[#FCFAF7] border border-[#DED7D0] rounded-[8px] max-w-xl w-full p-6 sm:p-8 shadow-2xl my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

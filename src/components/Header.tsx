@@ -39,18 +39,18 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-[#FCFAF7]/95 backdrop-blur-md border-b border-[#DED7D0] transition-all">
       <div className="max-w-[1360px] mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 sm:h-20">
+        <div className="flex items-center justify-between h-20">
           
           {/* Zone 1: Logo Oficial Móveis do Seu Jeito (Tamanho responsivo para telefone e desktop) */}
           <button 
             onClick={() => handleLinkClick('inicio')} 
-            className="group flex items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#875D41] rounded-[4px] cursor-pointer py-1"
+            className="group flex shrink-0 items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#875D41] rounded-[4px] cursor-pointer"
             aria-label="Móveis do Seu Jeito - Voltar ao início"
           >
             <img
               src={IMAGES.logo}
               alt="Móveis do Seu Jeito"
-              className="h-9 xs:h-10 sm:h-12 md:h-14 w-auto max-w-[150px] xs:max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-transform group-hover:scale-105"
+              className="w-32 h-[60px] min-[360px]:w-40 min-[360px]:h-[72px] sm:w-44 sm:h-[78px] lg:w-36 lg:h-[66px] xl:w-44 xl:h-[78px] object-cover object-[center_72%] transition-transform group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </button>
@@ -76,11 +76,11 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Zone 3: Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-3">
+          <div className="flex items-center gap-1 sm:gap-3">
             {/* Search Trigger */}
             <button
               onClick={onOpenSearch}
-              className="p-2 text-[#665B52] hover:text-[#24150E] transition-colors hover:bg-[#E6DDD6]/30 rounded-[4px] cursor-pointer"
+              className="min-w-11 min-h-11 flex items-center justify-center text-[#665B52] hover:text-[#24150E] transition-colors hover:bg-[#E6DDD6]/30 rounded-[4px] cursor-pointer"
               aria-label="Buscar ambientes e projetos"
               title="Buscar"
             >
@@ -91,7 +91,8 @@ export const Header: React.FC<HeaderProps> = ({
             {savedProjectsCount > 0 && (
               <button
                 onClick={onOpenSavedProjects}
-                className="relative p-2 text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] text-xs font-semibold flex items-center gap-1.5 cursor-pointer"
+                className="relative min-w-11 min-h-11 p-2 text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer"
+                aria-label={`Meus projetos salvos: ${savedProjectsCount}`}
                 title="Projetos de interesse selecionados"
               >
                 <span className="hidden sm:inline">Favoritos</span>
@@ -116,9 +117,9 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Primary Action Button */}
             <button
               onClick={onOpenQuote}
-              className="px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs lg:text-[13px] font-semibold tracking-wider text-white bg-[#24150E] hover:bg-[#39271D] active:bg-[#170D08] rounded-[4px] transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shadow-xs cursor-pointer"
+              className="hidden sm:flex px-4 lg:px-5 py-2.5 text-xs lg:text-[13px] font-semibold tracking-wider text-white bg-[#24150E] hover:bg-[#39271D] active:bg-[#170D08] rounded-[4px] transition-all items-center gap-2 whitespace-nowrap shadow-xs cursor-pointer"
             >
-              <span className="hidden xs:inline">SOLICITAR</span>
+              <span className="hidden sm:inline">SOLICITAR</span>
               <span>ORÇAMENTO</span>
               <span aria-hidden="true" className="hidden sm:inline">→</span>
             </button>
@@ -126,7 +127,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] cursor-pointer"
+              className="lg:hidden min-w-11 min-h-11 flex items-center justify-center text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] cursor-pointer"
               aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -159,6 +160,12 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           <div className="pt-4 border-t border-[#DED7D0] flex flex-col gap-3">
+            <button
+              onClick={() => { onOpenQuote(); setMobileMenuOpen(false); }}
+              className="sm:hidden w-full py-3 px-4 text-center text-xs font-semibold bg-[#24150E] text-white rounded-[4px]"
+            >
+              SOLICITAR ORÇAMENTO
+            </button>
             <div className="text-xs text-[#8A817A] flex items-center gap-2">
               <Phone className="w-3.5 h-3.5 text-[#C8A484]" />
               <span>{COMPANY_INFO.phone} · Araruama - RJ</span>

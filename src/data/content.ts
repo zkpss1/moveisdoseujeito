@@ -2,10 +2,10 @@ import { CategoryItem, ProjectItem, BenefitItem, TestimonialItem } from '../type
 
 // Importação das imagens como módulos ES para garantir empacotamento completo pelo Vite no Deploy (Vercel, Netlify, GitHub Pages)
 import logoImg from '../assets/images/logo_official.png';
-import heroQuartoImg from '../assets/images/hero_quarto_ripado.jpg';
-import heroCozinhaImg from '../assets/images/hero_cozinha_fendi.jpg';
-import heroGuardaRoupaImg from '../assets/images/hero_guarda_roupa.jpg';
-import heroGourmetImg from '../assets/images/hero_gourmet.jpg';
+import heroQuartoImg from '../assets/images/hero_quarto_ripado_enhanced.jpg';
+import heroCozinhaImg from '../assets/images/hero_cozinha_fendi_enhanced.jpg';
+import heroGuardaRoupaImg from '../assets/images/hero_guarda_roupa_enhanced.jpg';
+import heroGourmetImg from '../assets/images/hero_gourmet_enhanced.jpg';
 import carouselBanheiroImg from '../assets/images/carousel_banheiro_madeira_led_1791386830507.jpg';
 
 export const COMPANY_INFO = {

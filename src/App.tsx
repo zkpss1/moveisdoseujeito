@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { BenefitsBar } from './components/BenefitsBar';
@@ -18,6 +18,7 @@ import { SearchModal } from './components/SearchModal';
 import { SavedProjectsDrawer } from './components/SavedProjectsDrawer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { ProjectItem, RoomCategory, NavView } from './types';
+import { PROJECTS } from './data/content';
 
 export default function App() {
   const [activeView, setActiveView] = useState<NavView>('inicio');
@@ -29,7 +30,22 @@ export default function App() {
   const [quoteProjectRef, setQuoteProjectRef] = useState<ProjectItem | null>(null);
 
   const [selectedCategory, setSelectedCategory] = useState<RoomCategory | 'todos'>('todos');
-  const [savedProjectIds, setSavedProjectIds] = useState<string[]>(['proj-1', 'proj-3']);
+  const [savedProjectIds, setSavedProjectIds] = useState<string[]>(() => {
+    try {
+      const ids = (sessionStorage.getItem('savedProjectIds') ?? '').split(',');
+      return PROJECTS.filter((project) => ids.includes(project.id)).map((project) => project.id);
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('savedProjectIds', savedProjectIds.join(','));
+    } catch {
+      // O site continua funcionando se o navegador bloquear o armazenamento.
+    }
+  }, [savedProjectIds]);
 
   // Troca de tela/aba imediata com rolagem suave ao topo (sem scroll longo infinito)
   const handleNavigate = (view: NavView) => {

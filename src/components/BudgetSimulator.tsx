@@ -126,7 +126,7 @@ Gostaria de agendar uma visita t√©cnica gratuita ou enviar minha planta para or√
               <label className="text-xs font-bold uppercase tracking-wider text-[#24150E] block mb-3">
                 1. Selecione os C√¥modos que Deseja Planejar
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {roomsList.map((room) => {
                   const active = !!selectedRooms[room.id];
                   return (
@@ -140,7 +140,7 @@ Gostaria de agendar uma visita t√©cnica gratuita ou enviar minha planta para or√
                           : 'border-[#DED7D0] bg-white text-[#665B52] hover:border-[#875D41]'
                       }`}
                     >
-                      <span className="truncate">{room.name}</span>
+                      <span className="min-w-0 leading-snug">{room.name}</span>
                       {active && <Check className="w-3.5 h-3.5 shrink-0 ml-1 text-[#C8A484]" />}
                     </button>
                   );

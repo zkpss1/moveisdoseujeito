@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IMAGES } from '../data/content';
-import { ArrowRight, Compass, CheckCircle2, ChevronLeft, ChevronRight, Award } from 'lucide-react';
+import { ArrowRight, Compass, CheckCircle2, Award } from 'lucide-react';
 import { NavView } from '../types';
+import { swipeDirection } from '../utils/swipe';
 
 interface HeroProps {
   onOpenQuote: () => void;
@@ -14,6 +15,7 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const dragStart = useRef<{ x: number; y: number } | null>(null);
 
   // As 4 fotos de projetos reais enviadas pelo usuário
   const heroSlides = [
@@ -62,6 +64,14 @@ export const Hero: React.FC<HeroProps> = ({
     setActiveSlide((prev) => (prev + 1) % heroSlides.length);
   };
 
+  const handlePointerUp = (event: React.PointerEvent) => {
+    if (!dragStart.current) return;
+    const direction = swipeDirection(dragStart.current, { x: event.clientX, y: event.clientY });
+    dragStart.current = null;
+    if (direction === 1) handleNext();
+    if (direction === -1) handlePrev();
+  };
+
   return (
     <section 
       className="relative overflow-hidden bg-[#F8F5F0] pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 border-b border-[#DED7D0]/60"
@@ -73,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Coluna Esquerda: Textos, Títulos e CTAs de Navegação Direta */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-5 sm:space-y-6">
+          <div className="order-2 lg:order-1 lg:col-span-5 flex flex-col justify-center space-y-5 sm:space-y-6">
             
             {/* Kicker Editorial */}
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#665B52]">
@@ -149,13 +159,29 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Coluna Direita: O Carrossel com as Fotos dos Projetos Reais da Marcenaria */}
-          <div className="lg:col-span-7 relative group">
-            <div className="relative rounded-[8px] overflow-hidden bg-[#E6DDD6] shadow-sm border border-[#DED7D0] aspect-[16/10]">
+          <div className="order-1 lg:order-2 lg:col-span-7 relative group">
+            <div
+              className="relative rounded-[8px] overflow-hidden bg-[#E6DDD6] shadow-sm border border-[#DED7D0] aspect-[4/3] sm:aspect-[16/10] touch-pan-y select-none"
+              role="region"
+              aria-label="Carrossel de projetos. Deslize para os lados ou use as setas do teclado."
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowLeft') handlePrev();
+                if (event.key === 'ArrowRight') handleNext();
+              }}
+              onPointerDown={(event) => {
+                event.currentTarget.setPointerCapture(event.pointerId);
+                dragStart.current = { x: event.clientX, y: event.clientY };
+              }}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={() => { dragStart.current = null; }}
+            >
               
               {/* Imagem do Projeto Real */}
               <img
                 src={current.image}
                 alt={current.title}
+                draggable={false}
                 className="w-full h-full object-cover transition-opacity duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -172,46 +198,16 @@ export const Hero: React.FC<HeroProps> = ({
                 </span>
               </div>
 
-              {/* Botões de Navegação Anterior / Próximo (Chevrons) */}
-              <button
-                onClick={handlePrev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FCFAF7]/90 hover:bg-white text-[#24150E] border border-[#DED7D0] flex items-center justify-center transition-all opacity-80 hover:opacity-100 shadow-md cursor-pointer"
-                aria-label="Ver projeto anterior"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <button
-                onClick={handleNext}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FCFAF7]/90 hover:bg-white text-[#24150E] border border-[#DED7D0] flex items-center justify-center transition-all opacity-80 hover:opacity-100 shadow-md cursor-pointer"
-                aria-label="Ver próximo projeto"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-
-              {/* Barra Inferior com Indicadores (Dots) e Legenda */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-[#24150E]/80 backdrop-blur-xs px-3.5 py-1.5 rounded-full border border-white/20">
-                {heroSlides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveSlide(idx)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      activeSlide === idx ? 'w-6 bg-[#C8A484]' : 'w-2 bg-white/60 hover:bg-white'
-                    }`}
-                    aria-label={`Ir para projeto ${idx + 1}`}
-                  />
-                ))}
-              </div>
-
             </div>
 
             {/* Contador numérico de projetos */}
             <div className="mt-2.5 flex items-center justify-between text-xs text-[#8A817A] px-1">
-              <span>{current.tag}</span>
-              <span className="font-mono tabular-nums font-semibold text-[#24150E]">
+              <span className="min-w-0 truncate">{current.tag}</span>
+              <span className="ml-2 shrink-0 whitespace-nowrap font-mono tabular-nums font-semibold text-[#24150E]">
                 0{activeSlide + 1} / 0{heroSlides.length}
               </span>
             </div>
+            <p className="mt-1.5 px-1 text-[11px] font-semibold text-[#665B52] sm:hidden">Deslize para ver mais →</p>
           </div>
 
         </div>
