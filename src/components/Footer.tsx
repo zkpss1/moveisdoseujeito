@@ -23,10 +23,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="lg:col-span-4 space-y-4">
             <button 
               onClick={() => onNavigate('inicio')}
-              className="inline-block text-left cursor-pointer"
-              aria-label="Móveis do SG - Voltar ao início"
+              className="inline-block rounded-[4px] bg-[#FCFAF7] px-2 py-1 text-left cursor-pointer"
+              aria-label="Móveis do Seu Jeito - Voltar ao início"
             >
-              <BrandLogo className="text-[46px] text-[#FCFAF7]" />
+              <BrandLogo className="w-[165px] h-[78px] sm:w-[190px] sm:h-[88px]" />
             </button>
             
             <p className="text-xs text-[#E6DDD6]/80 leading-relaxed max-w-sm">
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-[4px] bg-[#39271D] hover:bg-[#C8A484] hover:text-[#24150E] text-white flex items-center justify-center transition-colors"
-                aria-label="Instagram Móveis do SG"
+                aria-label="Instagram Móveis do Seu Jeito"
                 title="Instagram @moveisdoseujeito"
               >
                 <Instagram className="w-4 h-4" />
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-[4px] bg-[#39271D] hover:bg-[#C8A484] hover:text-[#24150E] text-white flex items-center justify-center transition-colors"
-                aria-label="Facebook Móveis do SG"
+                aria-label="Facebook Móveis do Seu Jeito"
                 title="Facebook"
               >
                 <Facebook className="w-4 h-4" />

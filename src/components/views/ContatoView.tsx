@@ -14,7 +14,7 @@ export const ContatoView: React.FC = () => {
     e.preventDefault();
     if (!name.trim()) return;
 
-    const text = `*Contato através do site da Móveis do SG:*
+    const text = `*Contato através do site da Móveis do Seu Jeito:*
 👤 *Nome:* ${name}
 📞 *Telefone:* ${phone || 'Não informado'}
 📌 *Assunto:* ${subject}
@@ -48,7 +48,7 @@ export const ContatoView: React.FC = () => {
           <div className="lg:col-span-5 bg-[#FCFAF7] border border-[#DED7D0] rounded-[8px] p-6 sm:p-8 space-y-6 shadow-xs">
             
             <div className="pb-5 border-b border-[#DED7D0]">
-              <BrandLogo className="text-[46px] text-[#24150E]" />
+              <BrandLogo className="w-[190px] h-[88px] sm:w-[210px] sm:h-[98px]" />
               <p className="text-xs text-[#875D41] font-medium mt-2">
                 {COMPANY_INFO.tagline}
               </p>
@@ -104,7 +104,7 @@ export const ContatoView: React.FC = () => {
               <span className="text-[11px] font-semibold text-[#8A817A] uppercase tracking-wider block mb-2">
                 Acompanhe Nossos Projetos no Instagram
               </span>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href={COMPANY_INFO.instagramUrl}
                   target="_blank"

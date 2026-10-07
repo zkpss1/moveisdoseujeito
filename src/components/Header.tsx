@@ -46,9 +46,9 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => handleLinkClick('inicio')} 
             className="flex shrink-0 items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#875D41] rounded-[4px] cursor-pointer"
-            aria-label="Móveis do SG - Voltar ao início"
+            aria-label="Móveis do Seu Jeito - Voltar ao início"
           >
-            <BrandLogo className="text-[38px] text-[#24150E] sm:text-[42px] lg:text-[38px] xl:text-[42px]" />
+            <BrandLogo className="w-[130px] h-16 min-[360px]:w-[145px] min-[360px]:h-[68px] xl:w-[155px] xl:h-[72px]" />
           </button>
 
           {/* Zone 2: Navigation Links (Navegação imediata de telas/páginas, sem scroll longo) */}

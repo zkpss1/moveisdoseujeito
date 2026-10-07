@@ -23,7 +23,7 @@ export const ProcessoView: React.FC<ProcessoViewProps> = ({ onOpenQuote }) => {
       a: 'A primeira visita técnica para apresentação do projeto e alinhamento de medidas em Araruama e cidades vizinhas é gratuita e sem compromisso.'
     },
     {
-      q: 'Quais formas de pagamento a Móveis do SG oferece?',
+      q: 'Quais formas de pagamento a Móveis do Seu Jeito oferece?',
       a: 'Oferecemos pagamento facilitado, entrada e parcelamento no cartão de crédito, além de descontos especiais para quitação à vista na assinatura do contrato.'
     },
     {

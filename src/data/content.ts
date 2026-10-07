@@ -8,7 +8,7 @@ import heroGourmetImg from '../assets/images/hero_gourmet_enhanced.jpg';
 import carouselBanheiroImg from '../assets/images/carousel_banheiro_madeira_led_1791386830507.jpg';
 
 export const COMPANY_INFO = {
-  name: 'Móveis do SG',
+  name: 'Móveis do Seu Jeito',
   tagline: 'Marcenaria de Alto Padrão & Móveis Planejados',
   phone: '(22) 98848-1131',
   phoneRaw: '5522988481131',
@@ -242,7 +242,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     neighborhood: 'Centro',
     city: 'Araruama',
     projectType: 'Cozinha Planejada e Banheiros',
-    text: 'A equipe da Móveis do SG foi impecável do início ao fim! Fizeram o 3D exatamente como sonhei e a montagem foi super rápida e limpa. O acabamento dos puxadores e das gavetas é de um capricho raro.',
+    text: 'A equipe da Móveis do Seu Jeito foi impecável do início ao fim! Fizeram o 3D exatamente como sonhei e a montagem foi super rápida e limpa. O acabamento dos puxadores e das gavetas é de um capricho raro.',
     rating: 5,
     date: 'Setembro 2026'
   },

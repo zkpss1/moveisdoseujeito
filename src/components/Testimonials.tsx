@@ -16,7 +16,7 @@ export const Testimonials: React.FC = () => {
             O Que Nossos Clientes Dizem
           </h2>
           <p className="text-xs sm:text-sm text-[#665B52] mt-2">
-            Depoimentos de famílias e empreendedores que transformaram seus lares com a Móveis do SG.
+            Depoimentos de famílias e empreendedores que transformaram seus lares com a Móveis do Seu Jeito.
           </p>
         </div>
 
