@@ -6,7 +6,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const whatsappUrl = `https://wa.me/${COMPANY_INFO.phoneRaw}?text=${encodeURIComponent(
-    'Olá! Estava navegando no site da Móveis do Seu Jeito e gostaria de tirar uma dúvida sobre móveis planejados.'
+    'Olá! Estava navegando no site da Móveis do SG e gostaria de tirar uma dúvida sobre móveis planejados.'
   )}`;
 
   return (
@@ -20,7 +20,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
           >
             <X className="w-3 h-3" />
           </button>
-          <p className="font-semibold text-[#875D41]">Marcenaria Móveis do Seu Jeito</p>
+          <p className="font-semibold text-[#875D41]">Marcenaria Móveis do SG</p>
           <p className="text-[11px] text-[#665B52] mt-0.5">
             Deseja tirar dúvidas ou solicitar orçamento? Estamos online no WhatsApp!
           </p>

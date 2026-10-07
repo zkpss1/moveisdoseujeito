@@ -17,7 +17,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   if (!project) return null;
 
   const handleSendToWhatsApp = () => {
-    const message = `*Olá! Me interessei pelo seguinte projeto no site da Móveis do Seu Jeito:*
+    const message = `*Olá! Me interessei pelo seguinte projeto no site da Móveis do SG:*
 📌 *Projeto:* ${project.title} (${project.categoryLabel})
 📍 *Referência:* ${project.details.location}
 🧱 *Material:* ${project.details.material}

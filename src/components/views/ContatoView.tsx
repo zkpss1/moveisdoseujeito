@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { COMPANY_INFO, IMAGES } from '../../data/content';
+import { COMPANY_INFO } from '../../data/content';
 import { MapPin, Phone, Mail, Instagram, Facebook, Send, Clock, CheckCircle2 } from 'lucide-react';
+import { BrandLogo } from '../BrandLogo';
 
 export const ContatoView: React.FC = () => {
   const [name, setName] = useState('');
@@ -13,7 +14,7 @@ export const ContatoView: React.FC = () => {
     e.preventDefault();
     if (!name.trim()) return;
 
-    const text = `*Contato através do site da Móveis do Seu Jeito:*
+    const text = `*Contato através do site da Móveis do SG:*
 👤 *Nome:* ${name}
 📞 *Telefone:* ${phone || 'Não informado'}
 📌 *Assunto:* ${subject}
@@ -46,14 +47,8 @@ export const ContatoView: React.FC = () => {
           {/* Card com Informações Oficiais e Logo */}
           <div className="lg:col-span-5 bg-[#FCFAF7] border border-[#DED7D0] rounded-[8px] p-6 sm:p-8 space-y-6 shadow-xs">
             
-            {/* Logo da Marcenaria em Madeira 3D (apenas a imagem) */}
             <div className="pb-5 border-b border-[#DED7D0]">
-              <img
-                src={IMAGES.logo}
-                alt="Móveis do Seu Jeito"
-                className="h-14 sm:h-16 w-auto max-w-[240px] object-contain"
-                referrerPolicy="no-referrer"
-              />
+              <BrandLogo className="text-[46px] text-[#24150E]" />
               <p className="text-xs text-[#875D41] font-medium mt-2">
                 {COMPANY_INFO.tagline}
               </p>

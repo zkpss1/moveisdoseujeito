@@ -1,7 +1,8 @@
 import React from 'react';
-import { COMPANY_INFO, IMAGES } from '../data/content';
+import { COMPANY_INFO } from '../data/content';
 import { MapPin, Phone, Mail, Instagram, Facebook, ArrowUp } from 'lucide-react';
 import { NavView } from '../types';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onNavigate: (view: NavView) => void;
@@ -20,18 +21,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Col 1: Brand Info & Logo */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Logo oficial Móveis do Seu Jeito (Responsivo para telefone e desktop) */}
             <button 
               onClick={() => onNavigate('inicio')}
-              className="inline-block text-left group cursor-pointer"
-              aria-label="Voltar ao início"
+              className="inline-block text-left cursor-pointer"
+              aria-label="Móveis do SG - Voltar ao início"
             >
-              <img
-                src={IMAGES.logo}
-                alt="Móveis do Seu Jeito"
-                className="h-10 sm:h-14 w-auto max-w-[180px] sm:max-w-[240px] object-contain transition-transform group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
+              <BrandLogo className="text-[46px] text-[#FCFAF7]" />
             </button>
             
             <p className="text-xs text-[#E6DDD6]/80 leading-relaxed max-w-sm">
@@ -44,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-[4px] bg-[#39271D] hover:bg-[#C8A484] hover:text-[#24150E] text-white flex items-center justify-center transition-colors"
-                aria-label="Instagram Móveis do Seu Jeito"
+                aria-label="Instagram Móveis do SG"
                 title="Instagram @moveisdoseujeito"
               >
                 <Instagram className="w-4 h-4" />
@@ -54,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-[4px] bg-[#39271D] hover:bg-[#C8A484] hover:text-[#24150E] text-white flex items-center justify-center transition-colors"
-                aria-label="Facebook Móveis do Seu Jeito"
+                aria-label="Facebook Móveis do SG"
                 title="Facebook"
               >
                 <Facebook className="w-4 h-4" />

@@ -24,7 +24,7 @@ export const SavedProjectsDrawer: React.FC<SavedProjectsDrawerProps> = ({
 
   const handleSendAllToWhatsApp = () => {
     const list = savedProjects.map((p, idx) => `${idx + 1}. *${p.title}* (${p.categoryLabel})`).join('\n');
-    const msg = `*Olá! Salvei os seguintes projetos de referência no site da Móveis do Seu Jeito:*\n\n${list}\n\nGostaria de saber como ficaria um projeto nesses padrões para o meu espaço!`;
+    const msg = `*Olá! Salvei os seguintes projetos de referência no site da Móveis do SG:*\n\n${list}\n\nGostaria de saber como ficaria um projeto nesses padrões para o meu espaço!`;
     const url = `https://wa.me/${COMPANY_INFO.phoneRaw}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   };

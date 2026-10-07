@@ -216,7 +216,7 @@ Gostaria de agendar uma visita para medição ou receber contato da equipe!`;
               <span>Enviar para a Marcenaria no WhatsApp</span>
             </button>
             <span className="text-[11px] text-[#8A817A] text-center block mt-2">
-              Atendimento direto pelos mestres marceneiros da Móveis do Seu Jeito.
+              Atendimento direto pelos mestres marceneiros da Móveis do SG.
             </span>
           </div>
         </form>

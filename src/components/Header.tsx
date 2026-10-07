@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, MessageCircle, Search } from 'lucide-react';
-import { COMPANY_INFO, IMAGES } from '../data/content';
+import { COMPANY_INFO } from '../data/content';
 import { NavView } from '../types';
+import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
   activeView: NavView;
@@ -41,22 +42,17 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-[1360px] mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px] sm:h-20">
           
-          {/* Zone 1: Logo Oficial Móveis do Seu Jeito (Tamanho responsivo para telefone e desktop) */}
+          {/* Marca */}
           <button 
             onClick={() => handleLinkClick('inicio')} 
-            className="group flex shrink-0 items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#875D41] rounded-[4px] cursor-pointer"
-            aria-label="Móveis do Seu Jeito - Voltar ao início"
+            className="flex shrink-0 items-center text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#875D41] rounded-[4px] cursor-pointer"
+            aria-label="Móveis do SG - Voltar ao início"
           >
-            <img
-              src={IMAGES.logo}
-              alt="Móveis do Seu Jeito"
-              className="w-28 h-[54px] min-[360px]:w-[136px] min-[360px]:h-16 sm:w-40 sm:h-[72px] lg:w-32 lg:h-[60px] xl:w-40 xl:h-[72px] object-cover object-[center_72%] transition-transform group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
+            <BrandLogo className="text-[38px] text-[#24150E] sm:text-[42px] lg:text-[38px] xl:text-[42px]" />
           </button>
 
           {/* Zone 2: Navigation Links (Navegação imediata de telas/páginas, sem scroll longo) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-[13px] tracking-wide font-medium text-[#665B52]">
+          <nav className="hidden xl:flex items-center gap-7 text-[13px] tracking-wide font-medium text-[#665B52]">
             {navLinks.map((item) => {
               const isActive = activeView === item.view;
               return (
@@ -127,7 +123,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden min-w-11 min-h-11 flex items-center justify-center text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] cursor-pointer"
+              className="xl:hidden min-w-11 min-h-11 flex items-center justify-center text-[#24150E] hover:bg-[#E6DDD6]/40 rounded-[4px] cursor-pointer"
               aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -138,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#DED7D0] bg-[#FCFAF7] px-5 py-5 space-y-4 animate-fade-in">
+        <div className="xl:hidden border-t border-[#DED7D0] bg-[#FCFAF7] px-5 py-5 space-y-4 animate-fade-in">
           <nav className="flex flex-col space-y-1.5 text-sm font-medium text-[#665B52]">
             {navLinks.map((item) => {
               const isActive = activeView === item.view;

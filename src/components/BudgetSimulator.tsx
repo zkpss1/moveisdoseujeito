@@ -79,7 +79,7 @@ export const BudgetSimulator: React.FC = () => {
     const tierName =
       tier === 'essencial' ? 'Linha Essencial' : tier === 'premium' ? 'Linha Premium (Amortecedores & Ripados)' : 'Linha Luxo (Vidro Reflecta & Iluminação)';
 
-    const message = `*Olá! Simulei meu projeto pelo site da Móveis do Seu Jeito:*
+    const message = `*Olá! Simulei meu projeto pelo site da Móveis do SG:*
 👤 *Nome:* ${clientName}
 📍 *Cidade / Bairro:* ${clientCity} ${clientNeighborhood ? `(${clientNeighborhood})` : ''}
 📞 *Contato:* ${clientPhone || 'Não informado'}
@@ -356,7 +356,7 @@ Gostaria de agendar uma visita técnica gratuita ou enviar minha planta para or�
 
             {submitted && (
               <div className="p-3 bg-[#47664F]/10 border border-[#47664F]/30 rounded-[4px] text-xs text-[#47664F]">
-                Pronto! Abrimos o WhatsApp da Móveis do Seu Jeito com sua simulação formatada.
+                Pronto! Abrimos o WhatsApp da Móveis do SG com sua simulação formatada.
               </div>
             )}
 

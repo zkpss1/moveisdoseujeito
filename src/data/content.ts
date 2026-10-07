@@ -1,7 +1,6 @@
 import { CategoryItem, ProjectItem, BenefitItem, TestimonialItem } from '../types';
 
 // Importação das imagens como módulos ES para garantir empacotamento completo pelo Vite no Deploy (Vercel, Netlify, GitHub Pages)
-import logoImg from '../assets/images/logo_official.png';
 import heroQuartoImg from '../assets/images/hero_quarto_ripado_enhanced.jpg';
 import heroCozinhaImg from '../assets/images/hero_cozinha_fendi_enhanced.jpg';
 import heroGuardaRoupaImg from '../assets/images/hero_guarda_roupa_enhanced.jpg';
@@ -9,7 +8,7 @@ import heroGourmetImg from '../assets/images/hero_gourmet_enhanced.jpg';
 import carouselBanheiroImg from '../assets/images/carousel_banheiro_madeira_led_1791386830507.jpg';
 
 export const COMPANY_INFO = {
-  name: 'Móveis do Seu Jeito',
+  name: 'Móveis do SG',
   tagline: 'Marcenaria de Alto Padrão & Móveis Planejados',
   phone: '(22) 98848-1131',
   phoneRaw: '5522988481131',
@@ -23,9 +22,8 @@ export const COMPANY_INFO = {
   openingHours: 'Segunda a Sexta: 08:00 às 18:00 | Sábado: 08:00 às 13:00',
 };
 
-// Imagens dos projetos reais do cliente e a logo oficial em 3D
+// Imagens dos projetos reais do cliente
 export const IMAGES = {
-  logo: logoImg,
   carouselQuartoRipado: heroQuartoImg,
   carouselCozinha: heroCozinhaImg,
   carouselGuardaRoupa: heroGuardaRoupaImg,
@@ -244,7 +242,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     neighborhood: 'Centro',
     city: 'Araruama',
     projectType: 'Cozinha Planejada e Banheiros',
-    text: 'A equipe da Móveis do Seu Jeito foi impecável do início ao fim! Fizeram o 3D exatamente como sonhei e a montagem foi super rápida e limpa. O acabamento dos puxadores e das gavetas é de um capricho raro.',
+    text: 'A equipe da Móveis do SG foi impecável do início ao fim! Fizeram o 3D exatamente como sonhei e a montagem foi super rápida e limpa. O acabamento dos puxadores e das gavetas é de um capricho raro.',
     rating: 5,
     date: 'Setembro 2026'
   },
