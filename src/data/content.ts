@@ -35,7 +35,7 @@ export const IMAGES = {
   bedroom: heroGuardaRoupaImg,
   bathroom: carouselBanheiroImg,
   gourmet: heroGourmetImg,
-  living: heroQuartoRipado,
+  living: heroQuartoImg,
 };
 
 export const CATEGORIES: CategoryItem[] = [
